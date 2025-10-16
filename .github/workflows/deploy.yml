@@ -37,7 +37,7 @@ jobs:
           # Build the bash commands we want to run on EC2.
           # We pass them to AWS-RunShellScript via --parameters commands=[]
           #CMD="cd ${APP_DIR} && git fetch --all && git reset --hard origin/${BRANCH} || true && pm2 restart ${PM2_SERVICE_NAME}"
-          CMD="cd ${APP_DIR} && git clone https://github.com/TestOrg889/acr-build-helloworld-node.git &&  cd acr-build-helloworld-node && node server.js &"
+          CMD="cd ${APP_DIR} && git clone https://github.com/TestOrg889/acr-build-helloworld-node.git &&  cd acr-build-helloworld-node && pm2 start server.js"
           echo "Running remote commands on ${INSTANCE_ID}: $CMD"
           aws ssm send-command \
             --instance-ids "${INSTANCE_ID}" \
