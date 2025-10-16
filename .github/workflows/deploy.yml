@@ -13,7 +13,7 @@ env:
   AWS_REGION: ap-south-1        # change to your region
   INSTANCE_ID: i-0561e40bf9b1cba8c   # or use a repo secret or lookup by tag
   APP_DIR: /home/ubuntu/myapp         # path on EC2 where repo lives
-  BRANCH: main
+  BRANCH: master
   PM2_SERVICE_NAME: my-app-service      # pm2 process name or id
 
 jobs:
